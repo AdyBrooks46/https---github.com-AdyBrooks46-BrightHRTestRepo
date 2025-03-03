@@ -1,0 +1,21 @@
+{
+"employees":[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "emailAddress": "johndoe@brighthrtest.com",
+        "phoneNumber": "01204123456",
+        "jobTitle": "Principle Test Engineer"
+
+    },
+    {
+        "firstName": "Dave",
+        "lastName": "Smith",
+        "emailAddress": "davesmith@brighthrtest.com",
+        "phoneNumber": "01204456123",
+        "jobTitle": "Senior Test Engineer"
+
+    }   
+
+    ]
+}
