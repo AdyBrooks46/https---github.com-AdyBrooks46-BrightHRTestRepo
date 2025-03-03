@@ -13,6 +13,10 @@ Requirements
 
 4. Integrate this build so tests can run in the CI setup of your choice.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Requirements:
+
  
 Feature: Employee Management
 
@@ -49,34 +53,38 @@ Set up tech stack
 •	Install npm - Npm - v10.7.0
 •	Install VS Code
 
-Setup specflow and clone repo
+Setup playwright and clone repo
 got to github and clone the repo 
 Installation of playwright 
-Npx init playwright@latest
+Npx init playwright@latest - this will install the node modules.
+
+Use the follwing commands below to run the tests
 
 Playwright Commands
-1.	Specific file
+1.Run all tests
+npx playwright test 
+2.	Specific file
 npx playwright test ./tests/firstTest.spec.ts
-2.	select how many workers
+3.	select how many workers
 npx playwright test --workers 3
-3.	run all tests within the tests directory
+4.	run all tests within the tests directory
 npx playwright test        
-4.	run tests by test name
+5.	run tests by test name
 npx playwright test -g 'my second test'      
-5.	run test against a specific browser
+6.	run test against a specific browser
 npx playwright test --project=chromium
-6.	run the test headed
+7.	run the test headed
 npx playwright test --project=chromium --headed
 
-7.	show report
+8.	show report
 npx playwright show-report
-8.	start the codegen and inspector
+9.	start the codegen and inspector
 npx playwright codegen
-9.	creates a file with all steps in it
+10.	creates a file with all steps in it
 npx playwright codegen -o ./codeGenTestAuto.spec.ts
-10.	Run code gen in a specific device 
+11.	Run code gen in a specific device 
 npx playwright codegen --device="iphone 11 pro"
-11.	codegen help
+12.	codegen help
 npx playwright codegen --help    
 
 
