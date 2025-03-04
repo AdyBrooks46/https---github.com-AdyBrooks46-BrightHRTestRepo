@@ -34,9 +34,21 @@ test(`Add a new Employee ${employee.firstName} + ${employee.lastName}`, async ({
     await employeeHubPage.dateInput();
     await employeeHubPage.jobTitleInput(employee.jobTitle);
     await employeeHubPage.employeeSaveAndAdd();    
-
   }); 
 
 });
+
+test('Verify new employees', async ({ }) => {
+    
+    const employeeHubPage = new EmployeeHubPage(page);
+    await employeeHubPage.employeeLinkPage();
+
+    //assert new employee john Doe
+    await expect(employeeHubPage.assertEmployeeNameJohnDoe).toBeVisible();
+
+    //assert new employee dave Smith
+    await expect(employeeHubPage.assertEmployeeNameDaveSmith).toBeVisible();
+  
+  });
 
 

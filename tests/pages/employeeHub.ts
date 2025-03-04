@@ -1,6 +1,7 @@
 import path from "path";
 import { Locator, Page } from "playwright/test";
 import * as brightHREmployees from '../testData/brightHREmployees.json';
+const { test, expect } = require('@playwright/test');
 
 let page;
 
@@ -21,6 +22,10 @@ export class EmployeeHubPage{
     readonly saveNewEmployee: Locator;
     readonly addAnotherEmployee: Locator;
     readonly closeModal: Locator;
+    readonly assertEmployee: Locator;
+    readonly assertEmployeeHub: Locator;
+    readonly assertEmployeeNameJohnDoe: Locator;
+    readonly assertEmployeeNameDaveSmith:  Locator;
     
     constructor(page:Page)
     {
@@ -41,6 +46,9 @@ export class EmployeeHubPage{
         this.saveNewEmployee = page.getByRole('button', { name: 'Save new employee' })
         this.addAnotherEmployee = page.getByRole('button', { name: 'Add another employee' })
         this.closeModal = page.getByRole('button', { name: 'Close modal' })
+        this.assertEmployeeHub = page.getByRole('heading', { name: 'Employee hub' })
+        this.assertEmployeeNameJohnDoe = page.getByRole('heading', { name: 'John Doe' })
+        this.assertEmployeeNameDaveSmith = page.getByRole('heading', { name: 'Dave Smith' })
 
 
     }
@@ -91,9 +99,4 @@ export class EmployeeHubPage{
         await this.addAnotherEmployee.click();   
         await this.closeModal.click();
     }
-
-    async checkNewEmployees(){
-        
-    }
-    
 }
